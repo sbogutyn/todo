@@ -40,7 +40,7 @@
         <td class="progress"><%= task.progress %></td>
         <td class="priority"><%= task.priority %></td>
         <td><%= link_to 'Edytuj', edit_task_path(task) %></td>
-        <td><%= link_to 'Usuń', task, :confirm => 'Are you sure?', :method => :delete %></td>
+        <td><%= link_to 'Usuń', task, :confirm => 'Na pewno?', :method => :delete %></td>
       </tr>
     <% end %>
   </table>

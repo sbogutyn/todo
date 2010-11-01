@@ -12,18 +12,18 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :name %><br />
+    <%= f.label :name, 'Nazwa'%><br />
     <%= f.text_field :name %>
   </div>
   <div class="field">
-    <%= f.label :progress %><br />
+    <%= f.label :progress, 'Postęp' %><br />
     <%= f.text_field :progress %>
   </div>
   <div class="field">
-    <%= f.label :priority %><br />
+    <%= f.label :priority, 'Priorytet' %><br />
     <%= f.text_field :priority %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= submit_tag "Wyślij" %>
   </div>
 <% end %>
