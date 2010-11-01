@@ -1,27 +1,50 @@
-<h1>Listing tasks</h1>
-
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Progress</th>
-    <th>Priority</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @tasks.each do |task| %>
-  <tr>
-    <td><%= task.name %></td>
-    <td><%= task.progress %></td>
-    <td><%= task.priority %></td>
-    <td><%= link_to 'Show', task %></td>
-    <td><%= link_to 'Edit', edit_task_path(task) %></td>
-    <td><%= link_to 'Destroy', task, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
+<% content_for :head do %>
+  <style>
+    #wrapper {
+      margin: 0 auto 0 auto;
+      text-align: center;
+      width: 760px;
+    }
+    table {
+      border-collapse: collapse;
+    }
+    td {
+      border: 1px solid black; 
+      padding: 10px;
+    }
+    .name {
+      width: 300px;
+    }
+    .progress, .priority {
+      width: 70px;
+    }
+  </style>
 <% end %>
-</table>
 
-<br />
+<div id="wrapper">
 
-<%= link_to 'New Task', new_task_path %>
+  <h1>Lista zadań:</h1>
+
+  <table>
+    <tr>
+      <th class="name">Nazwa</th>
+      <th class="progress">Postęp</th>
+      <th class="priority">Priorytet</th>
+      <th></th>
+      <th></th>
+    </tr>
+
+    <% @tasks.each do |task| %>
+      <tr>
+        <td class="name"><%= link_to task.name, task %></td>
+        <td class="progress"><%= task.progress %></td>
+        <td class="priority"><%= task.priority %></td>
+        <td><%= link_to 'Edytuj', edit_task_path(task) %></td>
+        <td><%= link_to 'Usuń', task, :confirm => 'Are you sure?', :method => :delete %></td>
+      </tr>
+    <% end %>
+  </table>
+
+  <br />
+</div>
+<%= link_to 'Nowe zadanie', new_task_path %>
