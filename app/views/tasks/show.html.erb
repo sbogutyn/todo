@@ -1,24 +1,46 @@
 <p id="notice"><%= notice %></p>
-
-<p>
-  <b>Nazwa:</b>
-  <%= @task.name %>
-</p>
-
-<p>
-  <b>Opis:</b>
-  <%= @task.description %>
-</p>
-<p>
-  <b>Postęp:</b>
-  <%= @task.progress %>
-</p>
-
-<p>
-  <b>Priorytet:</b>
-  <%= @task.priority %>
-</p>
-
+<% content_for :head do %>
+  <style>
+    #wrapper {
+      margin: 0 auto 0 auto;
+      width: 760px;
+      text-align: center;
+    }
+    table {
+      width: 700px;
+      height: 400px;
+      border-collapse: collapse;
+    }
+    td {
+      border: 1px solid black;
+    }
+    .name {
+      height: 50px;
+      font-size: 20px;
+    }
+    .smallheight {
+      height: 20px;
+    }
+  </style>
+<% end %>
+<div id="wrapper">
+<table>
+  <thead>
+    <tr>
+      <td class="name" colspan="2"> <%= @task.name %></td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="smallheight">
+      <td> Priorytet: <%= @task.priority %></td>
+      <td> Postęp: <%= @task.progress %></td>
+    </tr>
+    <tr>
+      <td class="description" colspan="2"> <%= @task.description %>
+    </tr>
+  </tbody>
+</table>
+</div>
 
 <%= link_to 'Edycja', edit_task_path(@task) %> |
 <%= link_to 'Powrót', tasks_path %>

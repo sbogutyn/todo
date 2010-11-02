@@ -1,33 +1,78 @@
+<% content_for :head do %>
+  <style>
+    input, textarea {  
+      padding: 9px;  
+      border: solid 1px #E5E5E5;  
+      outline: 0;  
+      font: normal 13px/100% Verdana, Tahoma, sans-serif;  
+      width: 200px;  
+      background: #FFFFFF;  
+    }  
+
+    textarea {  
+      width: 200px;  
+      max-width: 200px;  
+      height: 150px;  
+      line-height: 150%;  
+    }  
+
+    input:hover, textarea:hover,  
+    input:focus, textarea:focus {  
+      border-color: #C9C9C9;  
+    }  
+
+    .form label {  
+      margin-left: 10px;  
+      color: #999999;  
+    }  
+
+    .submit input {  
+      width: auto;  
+      padding: 9px 15px;  
+      background: #617798;  
+      border: 0;  
+      font-size: 14px;  
+      color: #FFFFFF;  
+    }  
+    #forum_div {
+      width: 400px;
+      margin: 0 auto 0 auto;
+    }
+  </style>
+
+<% end %>
+<div id="forum_div">
 <%= form_for(@task) do |f| %>
   <% if @task.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@task.errors.count, "error") %> prohibited this task from being saved:</h2>
 
       <ul>
-      <% @task.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
+        <% @task.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
       </ul>
     </div>
   <% end %>
 
   <div class="field">
-    <%= f.label :name, 'Nazwa'%><br />
     <%= f.text_field :name %>
+    <%= f.label :name, 'Nazwa'%><br />
   </div>
   <div class="field">
     <%= f.label :description, 'Opis'%><br />
     <%= f.text_area :description %>
   </div>
   <div class="field">
-    <%= f.label :progress, 'Postęp' %><br />
     <%= f.text_field :progress %>
+    <%= f.label :progress, 'Postęp' %><br />
   </div>
   <div class="field">
-    <%= f.label :priority, 'Priorytet' %><br />
     <%= f.text_field :priority %>
+    <%= f.label :priority, 'Priorytet' %><br />
   </div>
   <div class="actions">
     <%= submit_tag "Wyślij" %>
   </div>
 <% end %>
+</div>
