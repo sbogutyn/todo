@@ -1,5 +1,8 @@
 <% content_for :head do %>
   <style>
+    a {
+      text-decoration: none;
+    }
     #wrapper {
       margin: 0 auto 0 auto;
       text-align: center;
@@ -7,6 +10,16 @@
     }
     table {
       border-collapse: collapse;
+      font-family: "Trebuchet MS", sans-serif;
+      font-size: 16px;
+      font-weight: bold;
+      line-height: 1.4em;
+      font-style: normal;
+    }
+    th {
+    }
+    tbody {
+
     }
     td {
       border: 1px solid black; 
@@ -26,23 +39,26 @@
   <h1>Lista zadań:</h1>
 
   <table>
-    <tr>
-      <th class="name">Nazwa</th>
-      <th class="progress">Postęp</th>
-      <th class="priority">Priorytet</th>
-      <th></th>
-      <th></th>
-    </tr>
-
-    <% @tasks.each do |task| %>
+    <thead>
       <tr>
-        <td class="name"><%= link_to task.name, task %></td>
-        <td class="progress"><%= task.progress %></td>
-        <td class="priority"><%= task.priority %></td>
-        <td><%= link_to 'Edytuj', edit_task_path(task) %></td>
-        <td><%= link_to 'Usuń', task, :confirm => 'Na pewno?', :method => :delete %></td>
+        <th class="name">Nazwa</th>
+        <th class="progress">Postęp</th>
+        <th class="priority">Priorytet</th>
+        <th></th>
+        <th></th>
       </tr>
-    <% end %>
+    </thead>
+    <tbody>
+      <% @tasks.each do |task| %>
+        <tr>
+          <td class="name"><%= link_to task.name, task %></td>
+          <td class="progress"><%= task.progress %></td>
+          <td class="priority"><%= task.priority %></td>
+          <td><%= link_to 'Edytuj', edit_task_path(task) %></td>
+          <td><%= link_to 'Usuń', task, :confirm => 'Na pewno?', :method => :delete %></td>
+        </tr>
+      <% end %>
+    </tbody>
   </table>
 
   <br />
