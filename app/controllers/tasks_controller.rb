@@ -2,10 +2,11 @@ class TasksController < ApplicationController
   # GET /tasks
   # GET /tasks.xml
   def index
-    @tasks = Task.order("priority DESC").all
-
+    @tasks = Task.order("priority DESC").all  
+    @t = Task.first
     respond_to do |format|
       format.html # index.html.erb
+      format.js
       format.xml  { render :xml => @tasks }
     end
   end
