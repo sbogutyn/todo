@@ -3,6 +3,10 @@
     body {
       background-color: #f2f5f8;
     }
+    h1 {
+      color: orange;
+      text-shadow: 2px 2px 2px #000;
+    }
     a {
       color: black;
       text-decoration: none;
@@ -19,15 +23,23 @@
       width: 760px;
     }
     table {
-      border-collapse: collapse;
+      border-collapse: separate;
       font-family: "Trebuchet MS", sans-serif;
       font-size: 16px;
       font-weight: bold;
       line-height: 1.4em;
       font-style: normal;
       color: black;
+      #-moz-box-shadow: 5px 5px 7px #888;
+      #-moz-border-radius-bottomright: 15px;
+      #-webkit-box-shadow: 5px 5px 7px #888;
+      #-webkit-border-bottom-right-radius: 15px;
     }
     th {
+      -moz-border-radius: 15px;
+      -webkit-border-radius: 15px;
+      border-radius: 15px;
+
     }
     tbody {
 
@@ -40,6 +52,10 @@
     }
     td {
       #border: 1px solid black; 
+      -moz-border-radius: 15px;
+      -webkit-border-radius: 15px;
+      border-radius: 15px;
+
       padding: 10px;
     }
     .name {
@@ -49,6 +65,22 @@
       width: 70px;
     }
     a.tname {
+      color: white;
+    }
+    .nowe_zadanie {
+      font-size: 16px;
+      display: block;
+      width: 200px;
+      height: 60px;
+      background-color : #8ea7c3;     
+      margin: 0 auto 0 auto;
+      border-radius: 15px;
+
+    }
+    .nowe_zadanie p {
+      line-height: 50px;
+      font-size: 25px;
+      font-weight: bold;
       color: white;
     }
   </style>
@@ -80,10 +112,14 @@
       <% end %>
     </tbody>
   </table>
-
+  <h1> Ilość zadań: <%= @tasks.count %> </h1>
+  <%= link_to new_task_path, :class => "nowe_zadanie" do %>
+    <p>Nowe zadanie</p>
+  <% end %>
   <br />
 </div>
 
 <%#= link_to 'Ajax', tasks_path, :remote => true %>
 <br/>
-<%= link_to 'Nowe zadanie', new_task_path %>
+
+
