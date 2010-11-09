@@ -5,7 +5,7 @@ Forum::Application.configure do
   config.action_mailer.smtp_settings = {
   :address              => "smtp.gmail.com",
   :port                 => 587,
-  :domain               => 'faktyprawne.pl',
+  :domain               => 'slawekapp.heroku.com',
   :user_name            => 'slafoo',
   :password             => 'noin14tio',
   :authentication       => 'plain',

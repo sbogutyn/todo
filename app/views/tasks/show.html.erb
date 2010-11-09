@@ -21,6 +21,13 @@
     .smallheight {
       height: 20px;
     }
+    .description {
+      font-size: 16px;
+      vertical-align: top;
+      text-align: left;
+      padding: 10px;
+      text-indent: 15px;
+    }
   </style>
 <% end %>
 <div id="wrapper">
@@ -37,10 +44,32 @@
     </tr>
     <tr>
       <td class="description" colspan="2"> <%= @task.description %>
-    </tr>
+      </tr>
+      <tr>
+        <td class="deadline" colspan="2"> <%= @task.deadline %> </td>
+      </tr>
   </tbody>
 </table>
 </div>
 
+Do końca zadania zostało: 
+<% unless @ile_do_konca.nil? -%>
+  <%= @ile_do_konca %> dni
+<% end %>
+
+<div id="comments">
+
+<% @task.comments.each do |comment| %>
+  <div class="comment">
+    <p> <%= comment.description %> </p>
+  </div>
+<% end %>
+<%= simple_form_for(@comment) do |f| %>
+  <%= f.hidden_field :task_id, :value => @task.id %>
+  <%= f.input :description, :as => :text, :label => "Komentarz:" %>
+  <%= f.button :submit %>
+<% end %>
+
+</div>
 <%= link_to 'Edycja', edit_task_path(@task) %> |
 <%= link_to 'Powrót', tasks_path %>

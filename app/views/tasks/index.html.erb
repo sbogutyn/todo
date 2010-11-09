@@ -84,6 +84,9 @@
 <div id="wrapper">
 
   <h1>Lista zadań:</h1>
+  <% if user_signed_in? %>
+    Bieżący użytkownik: <%= current_user.email %>
+  <% end %>
 
   <table id="lista">
     <thead>

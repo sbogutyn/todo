@@ -14,7 +14,12 @@ class TasksController < ApplicationController
   # GET /tasks/1
   # GET /tasks/1.xml
   def show
+    @comment = Comment.new
     @task = Task.find(params[:id])
+    unless @task.deadline.nil?
+      @ile_do_konca = @task.deadline - DateTime.now
+      @ile_do_konca = @ile_do_konca.to_i
+    end
 
     respond_to do |format|
       format.html # show.html.erb
