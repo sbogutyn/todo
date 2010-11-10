@@ -4,4 +4,5 @@ class Task < ActiveRecord::Base
   validates :priority, :presence => true, :numericality => true
   validates :description, :length => {:minimum => 5}
   has_many :comments
+  belongs_to :user
 end

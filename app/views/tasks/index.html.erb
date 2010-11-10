@@ -81,12 +81,10 @@
   </style>
 <% end %>
 
+<% if user_signed_in? %>
 <div id="wrapper">
 
   <h1>Lista zadań:</h1>
-  <% if user_signed_in? %>
-    Bieżący użytkownik: <%= current_user.email %>
-  <% end %>
 
   <table id="lista">
     <thead>
@@ -116,6 +114,9 @@
   <% end %>
   <br />
 </div>
+<% else %>
+  <p>Zaloguj się aby tworzyć i wyświetlać zadania!</p>
+<% end %>
 
 <%#= link_to 'Ajax', tasks_path, :remote => true %>
 <br/>

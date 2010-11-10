@@ -1,9 +1,11 @@
 class TasksController < ApplicationController
+
   # GET /tasks
   # GET /tasks.xml
   def index
-    @tasks = Task.order("priority DESC").all  
-    @t = Task.first
+    if user_signed_in?
+      @tasks = current_user.tasks.order("priority DESC").all  
+    end
     respond_to do |format|
       format.html # index.html.erb
       format.js

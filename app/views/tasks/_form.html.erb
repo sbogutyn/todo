@@ -10,6 +10,7 @@
 <% end %>
 <div id="forum_div">
   <%= simple_form_for(@task) do |f| %>
+    <%= f.hidden_field :user_id, :value => current_user.id %>
     <%= f.input :name, :label => "Nazwa" %>
     <%= f.input :description, :label => "Opis", :as => :text %>
     <%= f.input :progress, :label => "Postęp", :collection => 1..10, :include_blank => false %>
