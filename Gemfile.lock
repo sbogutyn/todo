@@ -51,6 +51,7 @@ GEM
     gherkin (2.2.9)
       json (~> 1.4.6)
       term-ansicolor (~> 1.0.5)
+    gravatar_image_tag (0.1.0)
     haml (3.0.23)
     i18n (0.4.2)
     jquery-rails (0.2.4)
@@ -119,6 +120,7 @@ PLATFORMS
 DEPENDENCIES
   cucumber-rails
   devise
+  gravatar_image_tag
   haml
   jquery-rails
   rails (= 3.0.0)

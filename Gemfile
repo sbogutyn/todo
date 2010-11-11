@@ -7,6 +7,7 @@ gem 'haml'
 gem 'devise'
 gem 'jquery-rails'
 gem 'simple_form'
+gem 'gravatar_image_tag'
 group :development, :test do
   gem 'cucumber-rails'
   gem 'webrat'
