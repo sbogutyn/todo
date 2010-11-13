@@ -1,0 +1,127 @@
+body {
+  background-color: #f2f5f8;
+}
+h1 {
+  color: orange;
+  text-shadow: 2px 2px 2px #000;
+}
+a {
+  color: black;
+  text-decoration: none;
+}
+a:visited {
+
+}
+a:hover {
+  color: white;
+}
+#wrapper {
+  margin: 0 auto 0 auto;
+  text-align: center;
+  width: 760px;
+}
+table {
+  border-collapse: separate;
+  font-family: "Trebuchet MS", sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 1.4em;
+  font-style: normal;
+  color: black;
+}
+th {
+  -moz-border-radius: 15px;
+  -webkit-border-radius: 15px;
+  border-radius: 15px;
+
+}
+tbody {
+
+}
+tr {
+  background-color : #8ea7c3;     
+}
+tr:nth-child(odd) {
+  background-color: #a4b8cf;
+}
+td {
+  -moz-border-radius: 15px;
+  border-radius: 15px;
+
+  padding: 10px;
+}
+.name {
+  width: 300px;
+}
+.progress, .priority {
+  width: 70px;
+}
+a.tname {
+  color: white;
+}
+.nowe_zadanie {
+  font-size: 16px;
+  display: block;
+  width: 200px;
+  height: 60px;
+  background-color : #8ea7c3;     
+  margin: 0 auto 0 auto;
+  border-radius: 15px;
+  -moz-border-radius: 15px;
+
+}
+.nowe_zadanie p {
+  line-height: 50px;
+  font-size: 25px;
+  font-weight: bold;
+  color: white;
+}
+.button {
+  display: inline-block;
+  outline: none;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  font: 14px/100% Arial, Helvetica, sans-serif;
+  padding: .5em 2em .55em;
+  text-shadow: 0 1px 1px rgba(0,0,0,.3);
+  -webkit-border-radius: .5em;
+  -moz-border-radius: .5em;
+  border-radius: .5em;
+  -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.2);
+  -moz-box-shadow: 0 1px 2px rgba(0,0,0,.2);
+  box-shadow: 0 1px 2px rgba(0,0,0,.2);
+}
+.button:hover {
+  text-decoration: none;
+}
+.button:active {
+  position: relative;
+  top: 1px;
+}
+.orange {
+  color: #fef4e9;
+  border: solid 1px #da7c0c;
+  background: #f78d1d;
+  background: -webkit-gradient(linear, left top, left bottom, from(#faa51a), to(#f47a20));
+  background: -moz-linear-gradient(top,  #faa51a,  #f47a20);
+  filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#faa51a', endColorstr='#f47a20');
+}
+.orange:hover {
+  background: #f47c20;
+  background: -webkit-gradient(linear, left top, left bottom, from(#f88e11), to(#f06015));
+  background: -moz-linear-gradient(top,  #f88e11,  #f06015);
+  filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#f88e11', endColorstr='#f06015');
+}
+.orange:active {
+  color: #fcd3a5;
+  background: -webkit-gradient(linear, left top, left bottom, from(#f47a20), to(#faa51a));
+  background: -moz-linear-gradient(top,  #f47a20,  #faa51a);
+  filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#f47a20', endColorstr='#faa51a');
+}
+#forum_div {
+  width: 400px;
+  margin: 0 auto 0 auto;
+}
+
+

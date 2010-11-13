@@ -1,0 +1,36 @@
+%p#notice= notice
+#wrapper
+  %table
+    %thead
+      %tr
+        %td.name{:colspan => "2"}
+          = @task.name
+    %tbody
+      %tr.smallheight
+        %td
+          Priorytet: #{@task.priority}
+        %td
+          Postęp: #{@task.progress}
+      %tr
+        %td.description{:colspan => "2"}
+          = @task.description
+      %tr
+        %td.deadline{:colspan => "2"} 
+          = @task.deadline
+
+Do końca zadania zostało:
+- unless @ile_do_konca.nil?
+  = @ile_do_konca
+  dni
+#comments
+  - @task.comments.each do |comment|
+    .comment
+      %p
+        = comment.description
+= simple_form_for(@comment) do |f|
+  = f.hidden_field :task_id, :value => @task.id
+  = f.input :description, :as => :text, :label => "Komentarz:"
+  = f.button :submit
+= link_to 'Edycja', edit_task_path(@task)
+|
+= link_to 'Powrót', tasks_path
