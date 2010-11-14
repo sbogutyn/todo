@@ -8,20 +8,23 @@
           %th.progress Postęp
           %th.priority Priorytet
           %th
-            %th
-              %tbody
-                - @tasks.each do |task|
-                  %tr
-                    %td.name
-                      = link_to task.name, task, :class => "tname"
-                    %td.progress 
-                      = task.progress
-                    %td.priority
-                      = task.priority
-                    %td
-                      = link_to 'Edytuj', edit_task_path(task)
-                    %td
-                      = link_to 'Usuń', task, :confirm => 'Na pewno?', :method => :delete
+          %th
+          %th.deadline Do końca
+      %tbody
+        - @tasks.each do |task|
+          %tr
+            %td.name
+              = link_to task.name, task, :class => "tname"
+            %td.progress 
+              = task.progress
+            %td.priority
+              = task.priority
+            %td
+              = link_to 'Edytuj', edit_task_path(task)
+            %td
+              = link_to 'Usuń', task, :confirm => 'Na pewno?', :method => :delete 
+            %td 
+              = task.ile_do_konca if task.ile_do_konca
     %h1
       Ilość zadań: #{@tasks.count}
     = link_to new_task_path, :class => "button orange" do

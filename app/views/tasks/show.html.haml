@@ -19,9 +19,8 @@
           = @task.deadline
 
 Do końca zadania zostało:
-- unless @ile_do_konca.nil?
-  = @ile_do_konca
-  dni
+- if @task.ile_do_konca
+  = @task.ile_do_konca
 #comments
   - @task.comments.each do |comment|
     .comment

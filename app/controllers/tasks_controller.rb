@@ -18,10 +18,10 @@ class TasksController < ApplicationController
   def show
     @comment = Comment.new
     @task = Task.find(params[:id])
-    unless @task.deadline.nil?
-      @ile_do_konca = @task.deadline - DateTime.now
-      @ile_do_konca = @ile_do_konca.to_i
-    end
+    #unless @task.deadline.nil?
+    #  @ile_do_konca = @task.deadline - DateTime.now
+    #  @ile_do_konca = @ile_do_konca.to_i
+    #end
 
     respond_to do |format|
       format.html # show.html.erb

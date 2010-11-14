@@ -1,5 +1,7 @@
 body {
   background-color: #f2f5f8;
+  margin: 0;
+  padding: 0;
 }
 h1 {
   color: orange;
@@ -30,10 +32,7 @@ table {
   color: black;
 }
 th {
-  -moz-border-radius: 15px;
-  -webkit-border-radius: 15px;
-  border-radius: 15px;
-
+  padding: 5px;
 }
 tbody {
 
@@ -45,8 +44,6 @@ tr:nth-child(odd) {
   background-color: #a4b8cf;
 }
 td {
-  -moz-border-radius: 15px;
-  border-radius: 15px;
 
   padding: 10px;
 }
@@ -124,4 +121,19 @@ a.tname {
   margin: 0 auto 0 auto;
 }
 
+#user_nav {
+  margin: 0;
+  width: 100%
+  height: 100px;
+  background-color: #aaaaaa;
+  padding-top: 10px;
+}
 
+#user_nav img {
+  margin-left: 10px;
+}
+
+#user_info {
+  float: right;
+  margin-right: 5px;
+}
