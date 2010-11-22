@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Lista zadań</title>
+<link href="/stylesheets/application.css?1289423123" media="screen" rel="stylesheet" type="text/css" />
+<link href="/stylesheets/scaffold.css?1289423123" media="screen" rel="stylesheet" type="text/css" />
+<link href="/stylesheets/tasks.css?1289765776" media="screen" rel="stylesheet" type="text/css" />
+<script src="/javascripts/jquery.js?1289423123" type="text/javascript"></script>
+<script src="/javascripts/rails.js?1289423123" type="text/javascript"></script>
+<script src="/javascripts/application.js?1289423123" type="text/javascript"></script>
+
+
+</head>
+<body>
+<div id='user_nav'>
+<img alt="gravatar użytkownika" src="http://gravatar.com/avatar/d460bb2e5bf2008e42c8fe27cf1f0491" />
+<div id='user_info'>
+Zalogowany jako testing@man.net.
+<a href="/users/sign_out">Wyloguj</a>
+</div>
+</div>
+<h1>Nowe zadanie</h1>
+<div id='forum_div'>
+<form accept-charset="UTF-8" action="/tasks" class="simple_form task" id="new_task" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /></div>
+<input id="task_user_id" name="task[user_id]" type="hidden" value="1" />
+<div class="input string required"><label class="string required" for="task_name"><abbr title="required">*</abbr> Nazwa</label><input class="string required" id="task_name" maxlength="255" name="task[name]" size="30" type="text" /></div>
+<div class="input text optional"><label class="text optional" for="task_description"> Opis</label><textarea class="text optional" cols="40" id="task_description" name="task[description]" rows="20"></textarea></div>
+<div class="input select required"><label class="select required" for="task_progress"><abbr title="required">*</abbr> Postęp</label><select class="select required" id="task_progress" name="task[progress]"><option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+<option value="5">5</option>
+<option value="6">6</option>
+<option value="7">7</option>
+<option value="8">8</option>
+<option value="9">9</option>
+<option value="10">10</option></select></div>
+<div class="input radio required"><label class="radio required" for="task_priority"><abbr title="required">*</abbr> Priorytet</label><input class="radio required" id="task_priority_1" name="task[priority]" type="radio" value="1" /><label class="collection_radio" for="task_priority_1">1</label><input class="radio required" id="task_priority_2" name="task[priority]" type="radio" value="2" /><label class="collection_radio" for="task_priority_2">2</label><input class="radio required" id="task_priority_3" name="task[priority]" type="radio" value="3" /><label class="collection_radio" for="task_priority_3">3</label><input class="radio required" id="task_priority_4" name="task[priority]" type="radio" value="4" /><label class="collection_radio" for="task_priority_4">4</label><input class="radio required" id="task_priority_5" name="task[priority]" type="radio" value="5" /><label class="collection_radio" for="task_priority_5">5</label><input class="radio required" id="task_priority_6" name="task[priority]" type="radio" value="6" /><label class="collection_radio" for="task_priority_6">6</label></div>
+<div class="input date optional"><label class="date optional" for="task_deadline_1i"> Czas zakończenia</label><select class="date optional" id="task_deadline_1i" name="task[deadline(1i)]">
+<option value="2005">2005</option>
+<option value="2006">2006</option>
+<option value="2007">2007</option>
+<option value="2008">2008</option>
+<option value="2009">2009</option>
+<option selected="selected" value="2010">2010</option>
+<option value="2011">2011</option>
+<option value="2012">2012</option>
+<option value="2013">2013</option>
+<option value="2014">2014</option>
+<option value="2015">2015</option>
+</select>
+<select class="date optional" id="task_deadline_2i" name="task[deadline(2i)]">
+<option value="1">January</option>
+<option value="2">February</option>
+<option value="3">March</option>
+<option value="4">April</option>
+<option value="5">May</option>
+<option value="6">June</option>
+<option value="7">July</option>
+<option value="8">August</option>
+<option value="9">September</option>
+<option value="10">October</option>
+<option selected="selected" value="11">November</option>
+<option value="12">December</option>
+</select>
+<select class="date optional" id="task_deadline_3i" name="task[deadline(3i)]">
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+<option value="5">5</option>
+<option value="6">6</option>
+<option value="7">7</option>
+<option value="8">8</option>
+<option value="9">9</option>
+<option value="10">10</option>
+<option value="11">11</option>
+<option value="12">12</option>
+<option value="13">13</option>
+<option value="14">14</option>
+<option value="15">15</option>
+<option value="16">16</option>
+<option value="17">17</option>
+<option value="18">18</option>
+<option value="19">19</option>
+<option value="20">20</option>
+<option value="21">21</option>
+<option selected="selected" value="22">22</option>
+<option value="23">23</option>
+<option value="24">24</option>
+<option value="25">25</option>
+<option value="26">26</option>
+<option value="27">27</option>
+<option value="28">28</option>
+<option value="29">29</option>
+<option value="30">30</option>
+<option value="31">31</option>
+</select>
+</div>
+<input id="task_submit" name="commit" type="submit" value="Prześlij" />
+</form>
+</div>
+
+<a href="/tasks">Powrót</a>
+
+</body>
+</html>

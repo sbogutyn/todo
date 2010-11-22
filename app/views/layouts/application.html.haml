@@ -13,7 +13,6 @@
         #user_info
           Zalogowany jako #{current_user.email}. 
           = link_to "Wyloguj", destroy_user_session_path
-
       - else
         #user_info
           = link_to "Zarejestruj się", new_user_registration_path

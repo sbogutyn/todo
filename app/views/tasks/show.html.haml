@@ -25,7 +25,7 @@ Do końca zadania zostało:
   - @task.comments.each do |comment|
     .comment
       %p
-        = comment.description
+        = raw(comment.markdown)
 = simple_form_for(@comment) do |f|
   = f.hidden_field :task_id, :value => @task.id
   = f.input :description, :as => :text, :label => "Komentarz:"
